@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://em5qsqjor6xe"]
+
+[ext_resource type="Texture2D" uid="uid://c30grff5ct6kp" path="res://Sprites/stolen_raccoon-removebg-preview.png" id="1_5ga0e"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ga0e"]
+bg_color = Color(0.270588, 0.270588, 0.270588, 0.8)
+skew = Vector2(0.625, 0)
+border_width_left = 45
+border_color = Color(1, 1, 1, 0.290196)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="PlayerPrompt" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-2, 3)
+rotation = 0.0366547
+scale = Vector2(0.352549, 0.360733)
+texture = ExtResource("1_5ga0e")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = -427.0
+offset_top = 29.0
+offset_right = -35.0
+offset_bottom = 92.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/bold_italics_font_size = 1
+theme_override_font_sizes/normal_font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxFlat_5ga0e")
+text = "PLACE HOLDER"
+scroll_active = false
+horizontal_alignment = 2

@@ -1,0 +1,72 @@
+[gd_scene load_steps=8 format=3 uid="uid://ler4tbth58w4"]
+
+[ext_resource type="Texture2D" uid="uid://dtgo5xx57otiw" path="res://Sprites/Racoon.png" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://d2qqsbse5i0q8" path="res://Scenes/player.gd" id="1_cvnsp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
+size = Vector2(20, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_urp6f"]
+atlas = ExtResource("1_4flbx")
+region = Rect2(480, 97, 48, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ivps1"]
+atlas = ExtResource("1_4flbx")
+region = Rect2(432, 97, 48, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bwjto"]
+atlas = ExtResource("1_4flbx")
+region = Rect2(528, 97, 48, 47)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_606se"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_urp6f")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ivps1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_urp6f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bwjto")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_urp6f")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 8.0
+}]
+
+[node name="Player" type="CharacterBody2D"]
+collision_mask = 2
+script = ExtResource("1_cvnsp")
+walk_speed = 350.0
+jump_force = -280.0
+dash_speed = 350.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_onrkg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(2.74125, 2.74125, 1.97209, 1)
+position = Vector2(1, -2)
+sprite_frames = SubResource("SpriteFrames_606se")
+animation = &"Walk"
+autoplay = "Idle"
+frame_progress = 0.204009
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(0, -45.565)
+zoom = Vector2(1.19, 1.19)
+position_smoothing_enabled = true
+drag_vertical_enabled = true
