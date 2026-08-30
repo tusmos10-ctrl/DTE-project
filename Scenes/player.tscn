@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://ler4tbth58w4"]
+[gd_scene load_steps=11 format=3 uid="uid://ler4tbth58w4"]
 
 [ext_resource type="Script" uid="uid://d2qqsbse5i0q8" path="res://Scenes/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://dtgo5xx57otiw" path="res://Sprites/Racoon.png" id="2_cvnsp"]
@@ -52,7 +52,7 @@ animations = [{
 "speed": 8.0
 }]
 
-[node name="Player" type="CharacterBody2D" unique_id=2055138381 node_paths=PackedStringArray("sfx_dash", "sfx_hook_fire", "sfx_hook_hit")]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("sfx_dash", "sfx_hook_fire", "sfx_hook_hit")]
 script = ExtResource("1_cvnsp")
 walk_speed = 300.0
 max_fall_speed = 1200.0
@@ -70,29 +70,29 @@ sfx_dash = NodePath("AudioStreamPlayer")
 sfx_hook_fire = NodePath("MrSfxHeianBigAnimeSwingSfx513459")
 sfx_hook_hit = NodePath("AudioStreamPlayer")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=420701119]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 5)
 shape = SubResource("RectangleShape2D_onrkg")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=908818379]
-modulate = Color(2.03982, 1.3078693, 1.6504844, 1)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(2.03982, 1.30787, 1.65048, 1)
 position = Vector2(1, -2)
 sprite_frames = SubResource("SpriteFrames_606se")
 animation = &"Walk"
 autoplay = "Idle"
-frame_progress = 0.49155048
+frame_progress = 0.49155
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=406230054]
+[node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(0, -45.565)
 zoom = Vector2(1.19, 1.19)
 position_smoothing_enabled = true
 drag_vertical_enabled = true
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1799291471]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_vgqql")
 pitch_scale = 2.17
 
-[node name="MrSfxHeianBigAnimeSwingSfx513459" type="AudioStreamPlayer" parent="." unique_id=1553017361]
+[node name="MrSfxHeianBigAnimeSwingSfx513459" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_fkybt")
 volume_db = -5.0
 pitch_scale = 1.11
