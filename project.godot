@@ -15,8 +15,16 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Trash Panda"
-run/main_scene="uid://c5686kgncoswc"
+run/main_scene="uid://b22mgjylorlqj"
 config/features=PackedStringArray("4.6", "Forward Plus")
+
+[audio]
+
+buses/default_bus_layout="uid://cgaje5btu1y35"
+
+[display]
+
+window/stretch/mode="canvas_items"
 
 [input]
 

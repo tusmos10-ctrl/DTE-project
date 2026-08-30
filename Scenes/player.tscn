@@ -1,28 +1,34 @@
-[gd_scene load_steps=8 format=3 uid="uid://ler4tbth58w4"]
+[gd_scene format=3 uid="uid://ler4tbth58w4"]
 
-[ext_resource type="Texture2D" uid="uid://dtgo5xx57otiw" path="res://Sprites/Racoon.png" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://d2qqsbse5i0q8" path="res://Scenes/player.gd" id="1_cvnsp"]
+[ext_resource type="Texture2D" uid="uid://dtgo5xx57otiw" path="res://Sprites/Racoon.png" id="2_cvnsp"]
+[ext_resource type="AudioStream" uid="uid://cpa88i4qjub17" path="res://Sounds/universfield-punch-140236.mp3" id="3_vgqql"]
+[ext_resource type="AudioStream" uid="uid://ddr7kvxcruodq" path="res://Sounds/mr-sfx-heian-big-anime-swing-sfx-513459.mp3" id="4_fkybt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
 size = Vector2(20, 30)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_urp6f"]
-atlas = ExtResource("1_4flbx")
-region = Rect2(480, 97, 48, 47)
+[sub_resource type="AtlasTexture" id="AtlasTexture_6t5aa"]
+atlas = ExtResource("2_cvnsp")
+region = Rect2(480, 102, 48, 47)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ivps1"]
-atlas = ExtResource("1_4flbx")
-region = Rect2(432, 97, 48, 47)
+[sub_resource type="AtlasTexture" id="AtlasTexture_vgqql"]
+atlas = ExtResource("2_cvnsp")
+region = Rect2(432, 102, 48, 47)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bwjto"]
-atlas = ExtResource("1_4flbx")
-region = Rect2(528, 97, 48, 47)
+[sub_resource type="AtlasTexture" id="AtlasTexture_fkybt"]
+atlas = ExtResource("2_cvnsp")
+region = Rect2(480, 102, 48, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x3wgy"]
+atlas = ExtResource("2_cvnsp")
+region = Rect2(528, 102, 48, 47)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_606se"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_urp6f")
+"texture": SubResource("AtlasTexture_6t5aa")
 }],
 "loop": true,
 "name": &"Idle",
@@ -30,43 +36,63 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ivps1")
+"texture": SubResource("AtlasTexture_vgqql")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_urp6f")
+"texture": SubResource("AtlasTexture_fkybt")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bwjto")
+"texture": SubResource("AtlasTexture_x3wgy")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_urp6f")
+"texture": SubResource("AtlasTexture_fkybt")
 }],
 "loop": true,
 "name": &"Walk",
 "speed": 8.0
 }]
 
-[node name="Player" type="CharacterBody2D"]
-collision_mask = 2
+[node name="Player" type="CharacterBody2D" unique_id=2055138381 node_paths=PackedStringArray("sfx_dash", "sfx_hook_fire", "sfx_hook_hit")]
 script = ExtResource("1_cvnsp")
-walk_speed = 350.0
-jump_force = -280.0
+walk_speed = 300.0
+max_fall_speed = 1200.0
+jump_force = -499.0
 dash_speed = 350.0
+dash_duration = 0.1
+dash_hit_radius = 40.0
+rope_wobble_freq = 18.875
+rope_wobble_amp = 40.195
+rope_whip_decay = 5.275
+rope_segments = 1565
+kill_slowmo_scale = 0.4
+kill_bounce = Vector2(300, -160)
+sfx_dash = NodePath("AudioStreamPlayer")
+sfx_hook_fire = NodePath("MrSfxHeianBigAnimeSwingSfx513459")
+sfx_hook_hit = NodePath("AudioStreamPlayer")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=420701119]
 position = Vector2(0, 5)
 shape = SubResource("RectangleShape2D_onrkg")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-modulate = Color(2.74125, 2.74125, 1.97209, 1)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=908818379]
+modulate = Color(2.03982, 1.3078693, 1.6504844, 1)
 position = Vector2(1, -2)
 sprite_frames = SubResource("SpriteFrames_606se")
 animation = &"Walk"
 autoplay = "Idle"
-frame_progress = 0.204009
+frame_progress = 0.49155048
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=406230054]
 offset = Vector2(0, -45.565)
 zoom = Vector2(1.19, 1.19)
 position_smoothing_enabled = true
 drag_vertical_enabled = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1799291471]
+stream = ExtResource("3_vgqql")
+pitch_scale = 2.17
+
+[node name="MrSfxHeianBigAnimeSwingSfx513459" type="AudioStreamPlayer" parent="." unique_id=1553017361]
+stream = ExtResource("4_fkybt")
+volume_db = -5.0
+pitch_scale = 1.11

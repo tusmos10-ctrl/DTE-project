@@ -1,0 +1,203 @@
+[gd_scene format=3 uid="uid://dthpiphg4qtu6"]
+
+[ext_resource type="Texture2D" uid="uid://jdfbfab2efkc" path="res://Sprites/Neon Border.png" id="1_5s8la"]
+[ext_resource type="Texture2D" uid="uid://b61mh8juhrt8h" path="res://Sprites/nightcitybackgorund.jpg" id="1_fr6qw"]
+[ext_resource type="FontFile" uid="uid://030thto01qof" path="res://Sprites/The Led Display St.ttf" id="2_fr6qw"]
+[ext_resource type="Texture2D" uid="uid://dcj0s45l5px5p" path="res://Scenes/Sprites/images-removebg-preview (3).png" id="4_oiqhk"]
+[ext_resource type="AudioStream" uid="uid://d3ecwwogdd1gq" path="res://Scenes/leberch-crime-trailer-256159.mp3" id="5_p3v23"]
+[ext_resource type="PackedScene" uid="uid://ler4tbth58w4" path="res://Scenes/player.tscn" id="6_hlpnd"]
+[ext_resource type="PackedScene" uid="uid://bgfgf3kh1r7am" path="res://dummy.tscn" id="7_73or5"]
+[ext_resource type="Texture2D" uid="uid://dksuydyr0djqf" path="res://tom pearl.jpg" id="8_vv0ms"]
+[ext_resource type="FontFile" uid="uid://83ollnmo8gni" path="res://abduction2002.ttf" id="9_dlght"]
+[ext_resource type="Script" uid="uid://b38ihc5emiddi" path="res://Scenes/button.gd" id="10_8i65c"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hlpnd"]
+line_spacing = 23.16
+font_size = 19
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_73or5"]
+font_size = 12
+outline_size = 9
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hlpnd"]
+
+[sub_resource type="Animation" id="Animation_hxa32"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_dlght"]
+resource_name = "new_animation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.98),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8i65c"]
+_data = {
+&"RESET": SubResource("Animation_hxa32"),
+&"new_animation": SubResource("Animation_dlght")
+}
+
+[node name="Control" type="Control" unique_id=391134307]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_vertical_guides_ = [-177.0]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1966317013]
+modulate = Color(0.23938057, 0.23938057, 0.23938057, 1)
+position = Vector2(577.00006, 273.6378)
+scale = Vector2(1.8177843, 2.0122395)
+texture = ExtResource("1_fr6qw")
+
+[node name="Smallcityline(3)" type="Sprite2D" parent="." unique_id=1566281269]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(232.75006, 568.75006)
+scale = Vector2(0.8618211, 0.95386904)
+texture = ExtResource("4_oiqhk")
+
+[node name="ImagesRemovebgPreview(3)" type="Sprite2D" parent="Smallcityline(3)" unique_id=1444242008]
+modulate = Color(0.05075276, 0.07603459, 0.16107349, 1)
+position = Vector2(578.7163, 4.455536)
+scale = Vector2(0.8618211, 0.95386904)
+texture = ExtResource("4_oiqhk")
+
+[node name="ImagesRemovebgPreview(3)" type="Sprite2D" parent="Smallcityline(3)/ImagesRemovebgPreview(3)" unique_id=1826279974]
+modulate = Color(0.05075276, 0.07603459, 0.16107349, 1)
+position = Vector2(552.0135, -15.386877)
+scale = Vector2(0.8618211, 0.95386904)
+texture = ExtResource("4_oiqhk")
+
+[node name="Button" type="Button" parent="." unique_id=86587291 node_paths=PackedStringArray("button", "camera")]
+layout_mode = 0
+offset_left = 952.50006
+offset_top = 574.0
+offset_right = 1131.5
+offset_bottom = 645.0
+theme_override_colors/font_color = Color(1.2576705, 0.85516286, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("9_dlght")
+theme_override_font_sizes/font_size = 68
+text = "PLAY"
+flat = true
+script = ExtResource("10_8i65c")
+button = NodePath(".")
+target_scene_path = "uid://sqsrt5r8e3u0"
+camera = NodePath("../Camera2D")
+shake_strength = 22.55
+
+[node name="Tutorial" type="Sprite2D" parent="." unique_id=1792873375]
+self_modulate = Color(2.454227, 2.454227, 2.454227, 1)
+position = Vector2(584, 330)
+texture = ExtResource("1_5s8la")
+
+[node name="Label" type="Label" parent="Tutorial" unique_id=385694454]
+offset_left = -225.0
+offset_top = -253.0
+offset_right = 234.0
+offset_bottom = -155.0
+theme_override_colors/font_color = Color(7.9110003, 7.9110003, 7.9110003, 1)
+theme_override_colors/font_outline_color = Color(1.312, 0.79775506, 0.2718536, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_fr6qw")
+theme_override_font_sizes/font_size = 60
+text = "TUTORIAL"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="Tutorial" unique_id=471477240]
+offset_left = 8.0
+offset_top = -120.0
+offset_right = 188.0
+offset_bottom = 107.0
+text = "CONTROLS:
+WASD - MOVEMENT
+SPACE - JUMP
+E - GRAPPLE HOOK
+Q - ATTACK/DASH"
+label_settings = SubResource("LabelSettings_hlpnd")
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label3" type="Label" parent="Tutorial" unique_id=1920164137]
+offset_left = -198.0
+offset_top = -157.0
+offset_right = -9.0
+offset_bottom = 155.0
+text = "To play the game, you
+ have a couple of abilites to use.
+There will be flying
+burgers you can attack
+ using the ATTACK/DASH.
+ They will take 3 hits.
+ You can use a
+ GRAPPLING HOOK to
+ make defeating the
+ enemies easier. When you land
+ the hook on a enemy,
+ you will be propelled towards it
+ and you can attack more faster.
+ Using these abilites. You can
+ chain attacks between enemies."
+label_settings = SubResource("LabelSettings_73or5")
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1151821722]
+position = Vector2(583.50006, 328.00003)
+
+[node name="LeberchCrimeTrailer256159" type="AudioStreamPlayer" parent="." unique_id=1913133067]
+stream = ExtResource("5_p3v23")
+volume_db = -6.545
+pitch_scale = 1.11
+autoplay = true
+
+[node name="Player" parent="." unique_id=2055138381 instance=ExtResource("6_hlpnd")]
+position = Vector2(586.50006, 19.00003)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=640407224]
+position = Vector2(584.50006, 553)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=521227855]
+shape = SubResource("WorldBoundaryShape2D_hlpnd")
+
+[node name="dummy" parent="." unique_id=274919830 instance=ExtResource("7_73or5")]
+position = Vector2(148.50006, 317.00003)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=475257198]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(554.5, 219)
+scale = Vector2(2.514, 1.408)
+texture = ExtResource("8_vv0ms")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D" unique_id=788232956]
+libraries/ = SubResource("AnimationLibrary_8i65c")
+autoplay = &"new_animation"
+speed_scale = 0.916

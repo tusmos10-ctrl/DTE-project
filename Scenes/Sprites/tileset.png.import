@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cypdna2ohrl16"
-path="res://.godot/imported/Trash Panda.apple-touch-icon.png-7c04d0ccb4b10fad68eb2e2ef428f7f6.ctex"
+uid="uid://bpbbo684njuud"
+path="res://.godot/imported/tileset.png-780b5ba0c345b088873d516f5b87b86f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Trash Panda.apple-touch-icon.png"
-dest_files=["res://.godot/imported/Trash Panda.apple-touch-icon.png-7c04d0ccb4b10fad68eb2e2ef428f7f6.ctex"]
+source_file="res://Scenes/Sprites/tileset.png"
+dest_files=["res://.godot/imported/tileset.png-780b5ba0c345b088873d516f5b87b86f.ctex"]
 
 [params]
 

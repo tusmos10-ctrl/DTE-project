@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4xxt704tjhdl"
-path="res://.godot/imported/Trash Panda.icon.png-e426c87e0b47cb454e4748f4f9c68cec.ctex"
+uid="uid://dqxkv7vt5d64d"
+path="res://.godot/imported/play-removebg-preview.png-a1d31c4add8c766f51db0a572f6fbffd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Trash Panda.icon.png"
-dest_files=["res://.godot/imported/Trash Panda.icon.png-e426c87e0b47cb454e4748f4f9c68cec.ctex"]
+source_file="res://Scenes/Sprites/play-removebg-preview.png"
+dest_files=["res://.godot/imported/play-removebg-preview.png-a1d31c4add8c766f51db0a572f6fbffd.ctex"]
 
 [params]
 

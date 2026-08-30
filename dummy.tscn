@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://bgfgf3kh1r7am"]
+
+[ext_resource type="Script" uid="uid://dmc2tdess6jew" path="res://character_body_2d.gd" id="1_gtj52"]
+[ext_resource type="Texture2D" uid="uid://dxn3luv0scfg4" path="res://Sprites/Burger flyer.png" id="1_xmspm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0umox"]
+atlas = ExtResource("1_xmspm")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1324b"]
+atlas = ExtResource("1_xmspm")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_stcs8"]
+atlas = ExtResource("1_xmspm")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0lhgj"]
+atlas = ExtResource("1_xmspm")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k6daa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0umox")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1324b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_stcs8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0lhgj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xmspm"]
+radius = 20.880613
+
+[node name="dummy" type="Node2D" unique_id=274919830]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1613624654]
+script = ExtResource("1_gtj52")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=480219649]
+sprite_frames = SubResource("SpriteFrames_k6daa")
+autoplay = "default"
+frame_progress = 0.274204
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=962121325]
+shape = SubResource("CircleShape2D_xmspm")

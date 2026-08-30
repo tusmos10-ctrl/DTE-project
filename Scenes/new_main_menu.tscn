@@ -1,0 +1,265 @@
+[gd_scene format=3 uid="uid://b22mgjylorlqj"]
+
+[ext_resource type="Script" uid="uid://dpio0wp5e2yoq" path="res://new_main_menu.gd" id="1_knrq2"]
+[ext_resource type="Texture2D" uid="uid://dcj0s45l5px5p" path="res://Scenes/Sprites/images-removebg-preview (3).png" id="2_2fttx"]
+[ext_resource type="Texture2D" uid="uid://b61mh8juhrt8h" path="res://Sprites/nightcitybackgorund.jpg" id="2_fh46a"]
+[ext_resource type="Texture2D" uid="uid://drbqexo67un4c" path="res://Sprites/Gemini_Generated_Image_hiymi8hiymi8hiym-removebg-preview.png" id="3_ffnui"]
+[ext_resource type="AudioStream" uid="uid://ccubjbfifesse" path="res://Sounds/cloudsystem-city-underground-409908.mp3" id="3_knrq2"]
+[ext_resource type="Texture2D" uid="uid://drd1jund0khma" path="res://Sprites/Untitled - 28 May 2026 at 14.26.09.png" id="4_1bmas"]
+[ext_resource type="FontFile" uid="uid://83ollnmo8gni" path="res://abduction2002.ttf" id="4_2fttx"]
+[ext_resource type="Texture2D" uid="uid://biwhfim6heb3m" path="res://Sprites/black.webp" id="5_sia7t"]
+[ext_resource type="Texture2D" uid="uid://bukf0ciyankj8" path="res://Scenes/New Piskel (1).png" id="6_5ra3w"]
+[ext_resource type="Script" uid="uid://dl3hiego2uymw" path="res://Scenes/v_box_container.gd" id="7_nwwjh"]
+[ext_resource type="FontFile" uid="uid://030thto01qof" path="res://Sprites/The Led Display St.ttf" id="10_oq56d"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nwwjh"]
+font = ExtResource("10_oq56d")
+font_size = 87
+font_color = Color(1.25516, 0.4954352, 1.25516, 1)
+outline_size = 27
+outline_color = Color(0.9634013, 0.0007780198, 0.9661629, 1)
+
+[sub_resource type="Animation" id="Animation_5ra3w"]
+resource_name = "Credit fading"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8333333, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.043137256, 0.043137256, 0.043137256, 1), Color(0.043137256, 0.043137256, 0.043137256, 1), Color(0.043039158, 0.04303915, 0.04303915, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Icon:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2, 0.4, 0.7, 0.8666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_sia7t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.033853278, 0.033853278, 0.033853274, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Icon:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2fttx"]
+_data = {
+&"Credit fading": SubResource("Animation_5ra3w"),
+&"RESET": SubResource("Animation_sia7t")
+}
+
+[sub_resource type="SystemFont" id="SystemFont_2fttx"]
+font_names = PackedStringArray("Palace Script MT")
+
+[node name="MainMenu" type="Control" unique_id=1379932971 node_paths=PackedStringArray("background", "extra_sprite", "play_button", "quit_button", "music_player", "main_menu_name", "button_background")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 84.0
+offset_top = 34.0
+offset_right = 84.0
+offset_bottom = 34.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_knrq2")
+background = NodePath("Background")
+extra_sprite = NodePath("ExtraSprite")
+play_button = NodePath("UILayer/VBoxContainer/PlayButton")
+quit_button = NodePath("UILayer/VBoxContainer/QuitButton")
+music_player = NodePath("MusicPlayer")
+main_menu_name = NodePath("MainMenuName")
+button_background = NodePath("ButtonBackground")
+metadata/_edit_use_anchors_ = true
+
+[node name="Nightcitybackgorund" type="Sprite2D" parent="." unique_id=1172749268]
+modulate = Color(2.5464685, 0.43841115, 1.1443202, 1)
+position = Vector2(495.25, 203)
+scale = Vector2(1.6902331, 2.1878238)
+texture = ExtResource("2_fh46a")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=707236153]
+modulate = Color(1.7581433, 0.59217817, 1.7581433, 1)
+texture = ExtResource("2_2fttx")
+
+[node name="ButtonBackground" type="Sprite2D" parent="." unique_id=1198567968]
+modulate = Color(1.5143418, 0.76182777, 1.5143418, 1)
+position = Vector2(147, 357)
+scale = Vector2(1.0541284, 1.091703)
+texture = ExtResource("4_1bmas")
+
+[node name="Label" type="Label" parent="." unique_id=219627923]
+layout_mode = 0
+offset_left = -59.0
+offset_top = 549.0
+offset_right = 947.0
+offset_bottom = 600.0
+theme_override_fonts/font = ExtResource("4_2fttx")
+theme_override_font_sizes/font_size = 54
+text = "(READ DESCRIPTION FOR CONTROLS)"
+
+[node name="ExtraSprite" type="Sprite2D" parent="." unique_id=1704175122]
+modulate = Color(1.4891366, 0.903977, 1.5513875, 1)
+position = Vector2(691.50006, 356)
+scale = Vector2(1.3485968, 1.4471545)
+texture = ExtResource("3_ffnui")
+
+[node name="NameBackground(3)" type="Sprite2D" parent="." unique_id=96994153]
+modulate = Color(6.3598237, 2.616204, 6.3598237, 0.7764706)
+position = Vector2(328.49997, 33.499996)
+scale = Vector2(1.316294, 1)
+texture = ExtResource("2_2fttx")
+flip_v = true
+
+[node name="MainMenuName" type="Label" parent="." unique_id=2109158869]
+layout_mode = 0
+offset_left = -13.0
+offset_top = -38.0
+offset_right = 688.0
+offset_bottom = 104.0
+theme_override_colors/font_color = Color(0.7844707, 0.4812516, 0.058754273, 1)
+theme_override_colors/font_outline_color = Color(0.25304943, 0.8704193, 0.81414574, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("10_oq56d")
+theme_override_font_sizes/font_size = 100
+text = "TRASH PANDA"
+label_settings = SubResource("LabelSettings_nwwjh")
+
+[node name="UILayer" type="Control" parent="." unique_id=2026116251]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UILayer" unique_id=659769236 node_paths=PackedStringArray("play_button", "quit_button")]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -87.0
+offset_right = 310.0
+offset_bottom = 263.0
+grow_vertical = 2
+theme_override_constants/separation = 49
+script = ExtResource("7_nwwjh")
+play_button = NodePath("PlayButton")
+quit_button = NodePath("QuitButton")
+next_scene_path = "uid://dthpiphg4qtu6"
+
+[node name="PlayButton" type="Button" parent="UILayer/VBoxContainer" unique_id=1276102360]
+modulate = Color(2.454227, 1.3629546, 2.454227, 1)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9081633, 0.37029788, 0, 1)
+theme_override_colors/font_outline_color = Color(0.5334246, 0.20589066, 0, 1)
+theme_override_constants/outline_size = 30
+theme_override_fonts/font = ExtResource("4_2fttx")
+theme_override_font_sizes/font_size = 120
+text = "Play
+"
+flat = true
+
+[node name="QuitButton" type="Button" parent="UILayer/VBoxContainer" unique_id=1530416983]
+modulate = Color(1.8938994, 1.0970258, 1.8938994, 1)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.59767216, 0.8724097, 0.87067056, 1)
+theme_override_colors/font_outline_color = Color(0.25882354, 0.40784314, 0.50980395, 1)
+theme_override_constants/outline_size = 30
+theme_override_fonts/font = ExtResource("4_2fttx")
+theme_override_font_sizes/font_size = 120
+text = "Quit
+"
+flat = true
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=432294602]
+stream = ExtResource("3_knrq2")
+volume_db = -1.56
+autoplay = true
+bus = &"Music"
+parameters/looping = true
+
+[node name="CreditScene" type="Sprite2D" parent="." unique_id=1320796750]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(0.033853278, 0.033853278, 0.033853274, 1)
+position = Vector2(500.5, 259.5)
+scale = Vector2(2.746, 1.634)
+texture = ExtResource("5_sia7t")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CreditScene" unique_id=1776775136]
+libraries/ = SubResource("AnimationLibrary_2fttx")
+autoplay = &"Credit fading"
+speed_scale = 0.15
+
+[node name="Icon" type="Sprite2D" parent="CreditScene" unique_id=146215198]
+position = Vector2(8.922077, -12.545906)
+scale = Vector2(0.22191371, 0.34834546)
+texture = ExtResource("6_5ra3w")
+
+[node name="Icon" type="Label" parent="CreditScene/Icon" unique_id=1404671192]
+offset_left = -512.99994
+offset_top = 8.0
+offset_right = 484.00006
+offset_bottom = 309.0
+theme_override_colors/font_color = Color(0.48570347, 0.48570353, 0.48570347, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = SubResource("SystemFont_2fttx")
+theme_override_font_sizes/font_size = 169
+text = "Raccoon            Studio"

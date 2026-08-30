@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cynhxyaih6jeo"]
+[gd_scene format=3 uid="uid://cynhxyaih6jeo"]
 
 [ext_resource type="Script" uid="uid://bky5fsyesswev" path="res://Scenes/character_body_2d.gd" id="1_v1upi"]
 [ext_resource type="Texture2D" uid="uid://b2sh8b5s0t85o" path="res://Sprites/Burger flyer attack.png" id="2_nxm6b"]
@@ -66,45 +66,34 @@ animations = [{
 "speed": 16.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_u4i1v"]
-size = Vector2(2959.11, 929)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v1upi"]
 size = Vector2(54.9633, 73.9238)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tdo46"]
 radius = 15.0
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=659495749]
 scale = Vector2(0.673176, 0.662845)
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_v1upi")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1341236853]
 position = Vector2(-2.59964, -1.13147)
 scale = Vector2(0.551258, 0.630568)
 sprite_frames = SubResource("SpriteFrames_7k17k")
 animation = &"Attack"
 autoplay = "Fly"
-frame_progress = 0.749318
+frame_progress = 0.85729724
 
-[node name="DetectionArea" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
-position = Vector2(-2.97099, 0)
-scale = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_u4i1v")
-
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." unique_id=1282813916]
 collision_layer = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=423072111]
 position = Vector2(39.3656, -2.26298)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_v1upi")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=959580200]
 rotation = 3.14159
 scale = Vector2(1.57071, 1.31114)
 shape = SubResource("CircleShape2D_tdo46")
