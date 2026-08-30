@@ -2,15 +2,15 @@
 
 [ext_resource type="Script" uid="uid://dpio0wp5e2yoq" path="res://new_main_menu.gd" id="1_knrq2"]
 [ext_resource type="Texture2D" uid="uid://dcj0s45l5px5p" path="res://Scenes/Sprites/images-removebg-preview (3).png" id="2_2fttx"]
-[ext_resource type="Texture2D" uid="uid://b61mh8juhrt8h" path="res://Scenes/Sprites/nightcitybackgorund.jpg" id="2_fh46a"]
+[ext_resource type="Texture2D" uid="uid://b61mh8juhrt8h" path="res://Sprites/nightcitybackgorund.jpg" id="2_fh46a"]
 [ext_resource type="Texture2D" uid="uid://drbqexo67un4c" path="res://Sprites/Gemini_Generated_Image_hiymi8hiymi8hiym-removebg-preview.png" id="3_ffnui"]
 [ext_resource type="AudioStream" uid="uid://ccubjbfifesse" path="res://Sounds/cloudsystem-city-underground-409908.mp3" id="3_knrq2"]
-[ext_resource type="Texture2D" uid="uid://drd1jund0khma" path="res://Scenes/Sprites/Untitled - 28 May 2026 at 14.26.09.png" id="4_1bmas"]
+[ext_resource type="Texture2D" uid="uid://drd1jund0khma" path="res://Sprites/Untitled - 28 May 2026 at 14.26.09.png" id="4_1bmas"]
 [ext_resource type="FontFile" uid="uid://83ollnmo8gni" path="res://abduction2002.ttf" id="4_2fttx"]
 [ext_resource type="Texture2D" uid="uid://biwhfim6heb3m" path="res://Sprites/black.webp" id="5_sia7t"]
 [ext_resource type="Texture2D" uid="uid://bukf0ciyankj8" path="res://Scenes/New Piskel (1).png" id="6_5ra3w"]
 [ext_resource type="Script" uid="uid://dl3hiego2uymw" path="res://Scenes/v_box_container.gd" id="7_nwwjh"]
-[ext_resource type="FontFile" uid="uid://030thto01qof" path="res://Scenes/Sprites/The Led Display St.ttf" id="10_oq56d"]
+[ext_resource type="FontFile" uid="uid://030thto01qof" path="res://Sprites/The Led Display St.ttf" id="10_oq56d"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_nwwjh"]
 font = ExtResource("10_oq56d")
